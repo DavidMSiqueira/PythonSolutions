@@ -1,9 +1,18 @@
 import re
 
-frase = "  Os espaços são>@  um problema  °  , entendeu?"
-frase = re.sub('[@>°]', '', frase)
 
-data = " ".join(frase.split())
+def clean(tratar):
+    tratar = re.sub('[-@&<>"]', '', tratar)
+    data = " ".join(tratar.split())
+    print(data)
 
 
-print(data)
+frase = str(input("Frase para ser tratada: "))
+
+clean(frase)
+
+'''
+Texto que pode ser usado como referencia para testes:
+Copiar após o fim da frase para pegar os espaços vazios no final da frase.
+    Os espaços são>@  um proble-ma  , entendeu?     
+'''
